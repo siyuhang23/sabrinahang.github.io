@@ -1,0 +1,24 @@
+h1{
+  color:hotpink;
+}
+
+h2{
+  color:blue;
+}
+
+p{
+  font-size: 5px;
+  font-style: italic;
+  font-weight: bold;
+  border: 5px dotted #0033d2;
+  border-top-color: hotpink;
+  border-bottom-color:red;
+}
+
+#first {
+  border-color: green;
+}
+
+.higtlight {
+  background-color: lightblue;
+}
