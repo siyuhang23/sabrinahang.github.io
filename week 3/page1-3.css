@@ -1,0 +1,19 @@
+h1{
+  font-size: 25px;
+  font-style:italic;
+  font-weight: bold;
+  color: lightgreen;
+}
+h2{
+  color:hotpink;
+}
+h3{
+  font-size: 15px;
+  font-style: Georgia;
+  font-weight: bold;
+  border: 2px dotted #0033d2;
+  border-top-color: orange;
+  border-bottom-color:yellow;
+border-left-color: yellow;
+border-right-color:yellow;
+}

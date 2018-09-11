@@ -1,0 +1,21 @@
+h1{
+  font-size: 25px;
+  font-style:italic;
+  font-weight: bold;
+  color: hotpink;
+}
+h2{
+  color:orange;
+  font-size: 25px;
+}
+
+h3{
+  font-size: 15px;
+  font-style: italic;
+  font-weight: bold;
+  border: 5px dotted #0033d2;
+  border-top-color: grey;
+  border-bottom-color:green;
+border-left-color: green;
+border-right-color:green;
+ }
