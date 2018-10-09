@@ -1,0 +1,29 @@
+#right-column{
+  background-color: #FF4136;
+  float: left;
+}
+#right-column{
+  position: absolute;
+    top: 1;
+    right: 10px;
+}
+.column{
+  width:50%;
+  height: 200px;
+}
+h1{
+  color: white;
+}
+ul{
+  color:white;
+}
+
+#left-column{
+  background-color:#001f3f;
+  float: left;
+}
+.column{
+  width:50%;
+  height: 500px;
+font-size: 15px;
+}
