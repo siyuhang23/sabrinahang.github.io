@@ -1,0 +1,118 @@
+<html>
+<head>
+	<title>SIYU'S CLOCK</title>
+</head>
+<body>
+	<script>
+	    function updateTimeConditional() {
+	        var timeHolder = document.querySelector("#timeConditionalHolder");
+			var hoursh0=document.querySelector("#hours0");
+			var hoursh1=document.querySelector("#hours1")
+			var minutesh0=document.querySelector("#minutes0");
+			var minutesh1=document.querySelector("#minutes1");
+			var secondsh0=document.querySelector("#seconds0");
+	        var secondsh1=document.querySelector("#seconds1");
+
+	        var now = new Date()
+	        var time = now.toTimeString()
+
+	        //timeHolder.innerHTML = time;
+
+
+	        hours=now.getHours()
+	        seconds=now.getSeconds()
+	        minutes=now.getMinutes()
+
+			str_hour=hours.toString();
+			str_hour_len=str_hour.length;
+			if(str_hour_len==1){
+				one=0;
+				two=parseInt(str_hour[0]);
+			}else{
+				one=str_hour[0];
+				two=str_hour[1];
+			}
+			str_minutes=minutes.toString();
+			str_minutes_len=str_minutes.length;
+			if(str_minutes_len==1){
+				three=0;
+				four=str_minutes[1];
+			}else{
+				three=str_minutes[0];
+				four=str_minutes[1];
+			}
+
+			str_seconds=seconds.toString();
+			str_seconds_len=str_seconds.length;
+			if(str_seconds_len==1){
+				five=0;
+				six=str_seconds[0];
+			}else{
+				five=str_seconds[0];
+				six=str_seconds[1];
+			}
+
+
+
+			console.log(one,two,three,four,five,six);
+	        status1=(255-3*seconds+hours+1);
+	        status2=(255-3*seconds+minutes+1);
+	        status3=(0+4*seconds+1);
+	        mcolor1="rgb("+status3+","+status2+","+status1+")";
+	        mcolor2="rgb("+status1+","+status2+","+status3+")";
+	        mcolor3="rgb("+status2+","+status1+","+status3+")";
+
+			var mcolor=new Array()
+	        mcolor[0]="rgb(0 ,0 ,0)";
+			mcolor[1]="rgb(255 ,255,0)";
+			mcolor[2]="rgb(0 ,255 ,0)";
+			mcolor[3]="rgb(255 ,0 ,0)";
+			mcolor[4]="rgb(255 ,193 ,193)";
+			mcolor[5]="rgb(255 ,140 ,0)";
+			mcolor[6]="rgb(160 ,32 ,240)";
+			mcolor[7]="rgb(139 ,125 ,123)";
+			mcolor[8]="rgb(139 105 20)";
+			mcolor[9]="rgb(0 ,154 ,205)";
+
+
+	        console.log(status);
+
+	        hoursh0.style.color=mcolor[one];
+			hoursh1.style.color=mcolor[two];
+	        minutesh0.style.color=mcolor[three];
+			minutesh1.style.color=mcolor[four];
+	        secondsh0.style.color=mcolor[five];
+	        secondsh1.style.color=mcolor[six];
+
+	        hoursh0.style.backgroundColor=mcolor[one];
+			hoursh1.style.backgroundColor=mcolor[two];
+	        minutesh0.style.backgroundColor=mcolor[three];
+			minutesh1.style.backgroundColor=mcolor[four];
+	        secondsh0.style.backgroundColor=mcolor[five];
+			secondsh1.style.backgroundColor=mcolor[six];
+
+
+	    }
+
+	    setInterval(updateTimeConditional, 1000)
+	</script>
+	<center>
+		<h2 id="timeConditionalHolder"></h2>
+		<span style="background-color:rgb(0 ,0 ,0)">0</span>
+		<span style="background-color:rgb(255 ,255,0)">1</span>
+		<span style="background-color:rgb(0 ,255 ,0)">2</span>
+		<span style="background-color:rgb(255 ,0 ,0)">3</span>
+		<span style="background-color:rgb(255 ,193 ,193)">4</span>
+		<span style="background-color:rgb(255 ,140 ,0)">5</span>
+		<span style="background-color:rgb(160 ,32 ,240)">6</span>
+		<span style="background-color:rgb(139 ,125 ,123)">7</span>
+		<span style="background-color:rgb(139 105 20)">8</span>
+		<span style="background-color:rgb(0 ,154 ,205)">9</span>
+		<h1 id="bone">
+			<span id="hours0">" "</span><span id="hours1">" "</span>:
+			<span id="minutes0">" "</span><span id="minutes1">" "</span>:
+			<span id="seconds0">" "</span><span id="seconds1">" "</span>
+		</h1>
+	</center>
+</body>
+</html>
