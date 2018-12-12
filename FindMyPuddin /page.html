@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FINAL PROJECT</title>
+	<link rel="stylesheet" href="page.css">
+</head>
+
+
+<body>
+<div class="container">
+
+	<h1 style="color: darkred ">🖤FIND MY PUDDIN🍮</h1>
+	<div class="block" onclick="choice()">
+		<div>
+            <img class="blue" src="picture/baseFace.png">
+        </div>
+		<div>
+            <img class="purple" src="picture/baseFace.png">
+        </div>
+        <div>
+            <img class="red" src="picture/baseFace.png">
+        </div>
+	</div>
+
+    <div class="back">
+        <div class="content" onclick="reChoice()">Back</div>
+    </div>
+
+    <div class="show" onclick="isShow()">
+        <div>
+            <img class="jokerOne" src="picture/jokerOne.png">
+        </div>
+		<div>
+            <img class="jokerTwo" src="picture/jokerTwo.png">
+        </div>
+        <div>
+            <img class="jokerThree" src="picture/jokerThree.png">
+        </div>
+    </div>
+    <div class="img">
+        <img src="picture/joker.gif">
+    </div>
+</div>
+
+
+
+<script>
+    var random = Math.ceil(Math.random() * 9);
+    var block = document.getElementsByClassName('block');
+    var show = document.getElementsByClassName('show');
+    var img = document.getElementsByClassName('img');
+    var back = document.getElementsByClassName('back');
+    var container = document.getElementsByClassName('container');
+    var faces = document.querySelectorAll('.block img');
+    var jokers = document.querySelectorAll('.show img');
+
+    faces.forEach(function(img) {
+
+        img.addEventListener('mouseenter', function () {
+            var path = 'picture/' + img.className + 'Face.png';
+            img.src = path;
+            img.style.width = '280px';
+            img.style.height = '320px';
+            img.style.marginLeft = '-25px';
+            img.style.marginTop = '-15px';
+        });
+        img.addEventListener('mouseleave', function () {
+            img.src = 'picture/baseFace.png';
+            img.style.width = '230px';
+            img.style.height = '300px';
+            img.style.marginLeft = '0';
+            img.style.marginTop = '0';
+        })
+    });
+
+    var temp = 0;
+    function choice() {
+        var color = event.target;
+        if (color.className == 'red') {
+            temp = 0;
+        }
+        if (color.className == 'purple') {
+            temp = 3;
+        }
+        if (color.className == 'black') {
+            temp = 6;
+        }
+        block[0].style.display = 'none';
+        show[0].style.display = 'block';
+    }
+    function isShow() {
+       var show = event.target;
+       if (show.className == 'jokerOne') {
+           temp += 1;
+           ok();
+       }
+       if (show.className == 'jokerTwo') {
+           temp += 2;
+           ok();
+       }
+       if (show.className == 'jokerThree') {
+           temp += 3;
+           ok();
+       }
+    }
+    function ok() {
+        console.log(temp);
+        console.log(random);
+        if (temp == random) {
+            block[0].style.display = 'none';
+            show[0].style.display = 'none';
+            img[0].style.display = 'block';
+        } else {
+            block[0].style.display = 'none';
+            show[0].style.display = 'none';
+            back[0].style.display = 'block';
+        }
+        temp = 0;
+    }
+    function reChoice() {
+        block[0].style.display = 'block';
+        show[0].style.display = 'none';
+        back[0].style.display = 'none';
+    }
+</script>
+</body>
+</html>
